@@ -5,6 +5,7 @@ byte count;
 
 void setup(void)
 {
+    Serial.begin(9600);
     pinMode(pwrLED, OUTPUT);
     digitalWrite(pwrLED, HIGH);
   for (byte i = 0; i < 8; i++) {
@@ -15,6 +16,8 @@ void setup(void)
 
 void loop(void)
 {
+  Serial.println(count, BIN);
+  delay(250);
   dispBinary(count++);
   delay(500);
 }
